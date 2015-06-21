@@ -8,4 +8,6 @@ class Application < Sinatra::Base
 end
 
 require File.join(Application.root, 'lib', 'application.rb')
-Dir[File.join(Application.root, 'lib', '**', '*.rb')].each { |f| require f }
+
+Dir[File.join(Application.root, 'lib', '*.rb')].each { |f| require f }
+Dir[File.join(Application.root, 'lib', 'programs', '**', '*.rb')].each { |f| require f }
