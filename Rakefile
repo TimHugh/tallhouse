@@ -1,5 +1,4 @@
 require 'rake/testtask'
-
 Rake::TestTask.new(:test) do |t|
   t.verbose = true if ARGV.include? "-v"
   t.libs << 'test'
