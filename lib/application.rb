@@ -1,4 +1,8 @@
 class Application < Sinatra::Base
+  get '/' do
+    status 200
+  end
+
   get '/sms' do
     create_response(dispatch_message(params))
   end
