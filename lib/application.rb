@@ -13,8 +13,4 @@ class Application < Sinatra::Base
     twiml = Twilio::TwiML::Response.new { |r| r.Message message }
     twiml.text
   end
-
-  def command
-    params[:Body].split(' ').first
-  end
 end
