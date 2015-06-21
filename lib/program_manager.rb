@@ -15,7 +15,7 @@ class ProgramManager
   def respond(params = {})
     body = params[:Body].downcase
     @programs.keys.each do |command|
-      if body[/^#{command}.*/]
+      if body[/#{command}/]
         @program = @programs[command]
         break
       end

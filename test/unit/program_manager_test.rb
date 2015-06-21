@@ -27,4 +27,8 @@ class ProgramManagerTest < Test
   def test_known_response
     assert_match 'Test response', program_manager.respond(Body: 'test')
   end
+
+  def test_command_substring
+    assert_match 'Test response', program_manager.respond(Body: 'This is a test message')
+  end
 end
