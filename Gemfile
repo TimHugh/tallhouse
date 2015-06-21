@@ -14,4 +14,5 @@ group :test, :development do
   gem 'codeclimate-test-reporter'
   gem 'dotenv'
   gem 'pry'
+  gem 'rack-test'
 end
