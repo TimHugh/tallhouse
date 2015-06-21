@@ -1,22 +1,26 @@
 require 'bundler'
 Bundler.require
 
-require './program_manager.rb'
+require './environment.rb'
+Dir[File.join(Application.root, 'lib', '**', '*.rb')].each { |f| require f }
 
-module GardenBuddy
-  class Application < Sinatra::Base
-    get '/sms' do
-      message = ProgramManager.new.respond(command, params)
-      create_response(message)
-    end
+class Application < Sinatra::Base
+  get '/sms' do
+    create_response(dispatch_message(params))
+  end
 
-    def create_response(message)
-      twiml = Twilio::TwiML::Response.new { |r| r.Message message }
-      twiml.text
-    end
+  def dispatch_message(message_params)
+    ProgramManager.new.respond(message_params)
+  rescue ProgramManager::UnknownCommand => e
+    "I don't know what that means! 🙈"
+  end
 
-    def command
-      params[:Body].split(' ').first
-    end
+  def create_response(message)
+    twiml = Twilio::TwiML::Response.new { |r| r.Message message }
+    twiml.text
+  end
+
+  def command
+    params[:Body].split(' ').first
   end
 end

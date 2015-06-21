@@ -1,6 +1,6 @@
-module GardenBuddy
+module Programs
   class WaterProgram < Program
-    @@command = "water"
+    @command = "water"
 
     def respond(params)
       "Thanks for watering! 🌻🎉"
