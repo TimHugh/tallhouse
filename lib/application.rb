@@ -1,9 +1,3 @@
-require 'bundler'
-Bundler.require
-
-require './environment.rb'
-Dir[File.join(Application.root, 'lib', '**', '*.rb')].each { |f| require f }
-
 class Application < Sinatra::Base
   get '/sms' do
     create_response(dispatch_message(params))
