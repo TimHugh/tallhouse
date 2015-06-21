@@ -1,0 +1,2 @@
+class ProgramManagerTest < Test
+end

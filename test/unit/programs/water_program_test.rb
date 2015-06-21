@@ -1,0 +1,2 @@
+class WaterProgramTest < Test
+end
