@@ -8,12 +8,12 @@ class ProgramManager
     Programs.constants.each do |constant|
       next if constant.to_s[/.*Program$/].nil?
       program = Programs.const_get(constant)
-      @programs[program.command] = program
+      @programs[program.command.downcase] = program
     end
   end
 
   def respond(params)
-    body = params[:Body]
+    body = params[:Body].downcase
     @program = nil
     @programs.keys.each do |command|
       if body[/^#{command}.*/]
