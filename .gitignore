@@ -1,2 +1,5 @@
 # ignore secrets!
 /.env
+
+# ignore test coverage
+/coverage
