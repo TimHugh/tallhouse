@@ -12,17 +12,16 @@ class ProgramManager
     end
   end
 
-  def respond(params)
+  def respond(params = {})
     body = params[:Body].downcase
-    @program = nil
     @programs.keys.each do |command|
       if body[/^#{command}.*/]
         @program = @programs[command]
         break
       end
     end
-    raise UnknownCommand if @program.nil?
-
     @program.new.respond(params)
+  rescue
+    raise UnknownCommand
   end
 end
