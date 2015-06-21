@@ -1,3 +1,3 @@
-# GardenBuddy
+# TallHouse
 
-Automated SMS gardening reminders
+For a house that can speak!
