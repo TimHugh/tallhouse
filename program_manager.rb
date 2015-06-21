@@ -16,7 +16,7 @@ module GardenBuddy
 
     def respond(command, params = {})
       raise UnknownCommand unless @programs.include? command
-      @program = @programs[command]
+      @program = @programs[command].new
       @program.respond(params)
     end
   end
