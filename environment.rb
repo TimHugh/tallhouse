@@ -7,6 +7,8 @@ class Application < Sinatra::Base
   end
 end
 
+Dir[File.join(Application.root, 'lib', 'core_extensions', '**', '*.rb')].each { |f| require f }
+
 require File.join(Application.root, 'lib', 'application.rb')
 
 Dir[File.join(Application.root, 'lib', '*.rb')].each { |f| require f }
