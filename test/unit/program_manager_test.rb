@@ -1,22 +1,6 @@
 require 'test_helper'
 
 class ProgramManagerTest < Test
-  class ProgramManager < ProgramManager
-    class TestProgram < Program
-      def init
-        @actions[/.*/] = lambda { |params| @responses[:test].random }
-        @responses[:test] = [
-          'Test response'
-        ]
-      end
-    end
-
-    def initialize
-      super
-      @programs = {'test' => TestProgram}
-    end
-  end
-
   def program_manager
     @program ||= ProgramManager.new
   end
