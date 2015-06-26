@@ -4,7 +4,7 @@ module TestObjects
       @trigger = /test/
 
       def init
-        @actions[/.*/] = lambda { |params| @responses[:test].random }
+        @actions[/.*/] = ->(params) { @responses[:test].random }
         @responses[:test] = [
           'Test response'
         ]

@@ -1,5 +1,5 @@
 class Array
   def random
-    self[rand(self.length)]
+    self[rand(length)]
   end
 end

@@ -1,0 +1,19 @@
+Documentation:
+  Enabled: false
+
+StringLiterals:
+  Enabled: false
+
+AmbiguousRegexpLiteral:
+  Enabled: false
+
+UnusedBlockArgument:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
