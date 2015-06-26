@@ -6,7 +6,7 @@ class EndpointTest < Test
     assert last_response.ok?
   end
 
-  def test_default_response
+  def test_sms_response
     get '/sms'
     assert last_response.ok?
   end

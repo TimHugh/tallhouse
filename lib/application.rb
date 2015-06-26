@@ -8,11 +8,7 @@ class Application < Sinatra::Base
   end
 
   def dispatch_message(message_params)
-    ProgramManager.new.respond(message_params)
-  rescue ProgramManager::UnknownCommand
-    "I don't know what that means! 🙈"
-  rescue ProgramManager::MissingCommand
-    "What? I can't hear you! 🙉"
+    Response.new(message_params)
   end
 
   def create_response(message)
