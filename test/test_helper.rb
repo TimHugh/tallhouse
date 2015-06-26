@@ -4,7 +4,12 @@ require 'dotenv'
 Dotenv.load
 
 require 'codeclimate-test-reporter'
-CodeClimate::TestReporter.start
+SimpleCov.start do
+  formatter SimpleCov::Formatter::MultiFormatter[
+    SimpleCov::Formatter::HTMLFormatter,
+    CodeClimate::TestReporter::Formatter
+  ]
+end
 
 require 'minitest/autorun'
 require 'rack/test'
