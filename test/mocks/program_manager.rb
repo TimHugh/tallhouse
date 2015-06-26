@@ -8,7 +8,10 @@ class ProgramManager
     end
   end
 
+  alias_method :old_init, :initialize
   def initialize
-    @programs = {'test' => TestProgram}
+    super_return = old_init
+    @programs['test'] = TestProgram
+    super_return
   end
 end
