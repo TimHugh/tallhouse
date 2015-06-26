@@ -3,8 +3,11 @@ require 'test_helper'
 class ProgramManagerTest < Test
   class ProgramManager < ProgramManager
     class TestProgram < Program
-      def respond(params)
-        'Test response'
+      def init
+        @actions[/.*/] = lambda { |params| @responses[:test].random }
+        @responses[:test] = [
+          'Test response'
+        ]
       end
     end
 
