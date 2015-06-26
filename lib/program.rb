@@ -3,14 +3,12 @@ class Program
     @actions = {}
     @responses = {}
 
-    self.init if self.methods.include?(:init)
+    init if methods.include?(:init)
   end
 
   def respond(params = {})
     @actions.each do |pattern, action|
-      if params[:Body][pattern]
-        return action.call(params)
-      end
+      return action.call(params) if params[:Body][pattern]
     end
   end
 

@@ -6,7 +6,7 @@ class ResponseTest < Test
   end
 
   def test_missing_response
-    refute Response.new().empty?
+    refute Response.new.empty?
   end
 
   def test_unknown_response

@@ -4,7 +4,7 @@ class Response < String
       @program_manager = ProgramManager.new
       begin
         response_string = @program_manager.respond(params)
-      rescue Exception => e
+      rescue RuntimeError => e
         response_string = error_response(e)
       end
       super response_string

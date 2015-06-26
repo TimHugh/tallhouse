@@ -15,7 +15,7 @@ class ProgramManager
 
   def respond(params = {})
     body = params[:Body]
-    raise MissingCommand if body.nil? || body.strip.empty?
+    fail MissingCommand if body.nil? || body.strip.empty?
 
     @programs.keys.each do |trigger|
       if body.match(trigger)
@@ -23,7 +23,7 @@ class ProgramManager
         break
       end
     end
-    raise UnknownCommand if @program.nil?
+    fail UnknownCommand if @program.nil?
     @program.new.respond(params)
   end
 end
