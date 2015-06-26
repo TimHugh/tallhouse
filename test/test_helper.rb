@@ -8,6 +8,7 @@ CodeClimate::TestReporter.start
 
 require 'minitest/autorun'
 require 'rack/test'
+require 'pry'
 
 require File.absolute_path('environment.rb')
 
