@@ -1,6 +1,6 @@
 class Application < Sinatra::Base
   get '/' do
-    status 200
+    redirect 'http://github.com/timhugh/tallhouse'
   end
 
   get '/sms' do
