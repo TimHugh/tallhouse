@@ -15,7 +15,7 @@ class ProgramManager
 
   def respond(params = {})
     body = params[:Body]
-    raise MissingCommand if body.nil?
+    raise MissingCommand if body.nil? || body.strip!.empty?
     body.downcase!
 
     @programs.keys.each do |command|
