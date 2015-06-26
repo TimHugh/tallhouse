@@ -15,9 +15,9 @@ class Response < String
     def error_response(exception)
       case exception
       when ProgramManager::MissingCommand
-        ["What? I can't hear you! 🙉", "Cat got your tongue? 😼"].random
+        ["What? I can't hear you! 🙉", "Cat got your tongue? 😼🙉"].random
       when ProgramManager::UnknownCommand
-        ["I don't know what that means! 🙈"].random
+        ["I don't know what that means! 🙈", "Your words have fallen on deaf ears 🙉"].random
       end
     end
   end
