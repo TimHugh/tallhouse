@@ -10,13 +10,5 @@ module Programs
         hello: ['Hello! 😄', 'Yes, this is house 🏠']
       }
     end
-
-    def respond(params = {})
-      @actions.each do |pattern, action|
-        if params[:Body][pattern]
-          return action.call(params)
-        end
-      end
-    end
   end
 end
