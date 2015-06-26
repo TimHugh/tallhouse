@@ -25,3 +25,7 @@ class Test < Minitest::Test
     Application
   end
 end
+
+module Programs
+  include TestObjects::Programs
+end
