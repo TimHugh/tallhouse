@@ -1,5 +1,5 @@
 require 'bundler'
-Bundler.require
+Bundler.require(:default, ENV['RACK_ENV'])
 
 class Application < Sinatra::Base
   configure do
