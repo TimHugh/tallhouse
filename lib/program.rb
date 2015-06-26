@@ -15,6 +15,6 @@ class Program
   end
 
   class << self
-    attr_reader :command
+    attr_reader :trigger
   end
 end

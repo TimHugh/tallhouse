@@ -1,6 +1,6 @@
 module Programs
   class HelloProgram < Program
-    @command = "hello"
+    @trigger = /hello|hey|howdy/i
 
     def initialize
       @actions = {

@@ -9,18 +9,17 @@ class ProgramManager
     Programs.constants.each do |constant|
       next if constant.to_s[/.*Program$/].nil?
       program = Programs.const_get(constant)
-      @programs[program.command.downcase] = program
+      @programs[program.trigger] = program
     end
   end
 
   def respond(params = {})
     body = params[:Body]
     raise MissingCommand if body.nil? || body.strip.empty?
-    body.downcase!
 
-    @programs.keys.each do |command|
-      if body[/#{command}/]
-        @program = @programs[command]
+    @programs.keys.each do |trigger|
+      if body.match(trigger)
+        @program = @programs[trigger]
         break
       end
     end

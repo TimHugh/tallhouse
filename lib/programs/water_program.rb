@@ -1,6 +1,6 @@
 module Programs
   class WaterProgram < Program
-    @command = "water"
+    @trigger = /water|garden/i
 
     def init
       @actions[/.*/] = lambda { |params| @responses[:thank_you].random }
