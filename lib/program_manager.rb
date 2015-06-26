@@ -1,5 +1,6 @@
 class ProgramManager
   class UnknownCommand < RuntimeError; end
+  class MissingCommand < RuntimeError; end
 
   attr_reader :programs
 
@@ -13,15 +14,17 @@ class ProgramManager
   end
 
   def respond(params = {})
-    body = params[:Body].downcase
+    body = params[:Body]
+    raise MissingCommand if body.nil?
+    body.downcase!
+
     @programs.keys.each do |command|
       if body[/#{command}/]
         @program = @programs[command]
         break
       end
     end
+    raise UnknownCommand if @program.nil?
     @program.new.respond(params)
-  rescue
-    raise UnknownCommand
   end
 end
