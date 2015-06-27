@@ -6,7 +6,7 @@ module Programs
 
     def init
       @actions[/.*/] = ->(params) { @responses[:hello].random }
-      @responses[:hello] = ["Hello! 😄", "Yes, this is house 🏠"]
+      @responses[:hello] = ["Hello! 🏡", "Yes, this is house 🏡"]
     end
   end
 end
