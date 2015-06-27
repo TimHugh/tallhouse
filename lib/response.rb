@@ -1,3 +1,5 @@
+require_relative 'program_manager'
+
 class Response < String
   class << self
     def new(params = {})

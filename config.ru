@@ -1,3 +1,3 @@
-require './environment.rb'
+require_relative 'environment'
 
 run Application

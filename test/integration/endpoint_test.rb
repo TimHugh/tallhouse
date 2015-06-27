@@ -1,6 +1,12 @@
 require 'test_helper'
 
 class EndpointTest < Test
+  include Rack::Test::Methods
+
+  def app
+    Application
+  end
+
   def test_root
     get '/'
     assert last_response.redirect?

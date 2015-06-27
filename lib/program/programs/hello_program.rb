@@ -1,3 +1,5 @@
+require_relative '../program'
+
 module Programs
   class HelloProgram < Program
     @trigger = /hello|hey|howdy/i

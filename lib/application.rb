@@ -1,3 +1,5 @@
+require_relative 'response'
+
 class Application < Sinatra::Base
   get '/' do
     redirect 'http://github.com/timhugh/tallhouse'
