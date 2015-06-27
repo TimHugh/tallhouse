@@ -1,14 +1,12 @@
-module TestObjects
-  module Programs
-    class TestProgram < Program
-      @trigger = /test/
+module Programs
+  class TestProgram < Program
+    @trigger = /test/
 
-      def init
-        @actions[/.*/] = ->(params) { @responses[:test].random }
-        @responses[:test] = [
-          'Test response'
-        ]
-      end
+    def init
+      @actions[/.*/] = ->(params) { @responses[:test].random }
+      @responses[:test] = [
+        'Test response'
+      ]
     end
   end
 end

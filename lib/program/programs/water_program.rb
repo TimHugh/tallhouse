@@ -1,3 +1,5 @@
+require_relative '../program'
+
 module Programs
   class WaterProgram < Program
     @trigger = /water|garden/i

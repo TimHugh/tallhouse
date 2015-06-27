@@ -1,3 +1,5 @@
+require_rel 'program/programs/**/*.rb'
+
 class ProgramManager
   class UnknownCommand < RuntimeError; end
   class MissingCommand < RuntimeError; end
