@@ -3,7 +3,7 @@ Bundler.require(:default, ENV['RACK_ENV'])
 
 class Application < Sinatra::Base
   configure do
-    set :root, File.absolute_path('.')
+    set :root, File.dirname(__FILE__)
   end
 end
 
