@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ProgramManagerTest < Test
   def program_manager
-    @program ||= ProgramManager.new
+    @program_manager ||= ProgramManager.new
   end
 
   def test_known_response

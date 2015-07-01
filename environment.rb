@@ -3,9 +3,11 @@ Bundler.require(:default, ENV['RACK_ENV'])
 
 class Application < Sinatra::Base
   configure do
-    set :root, File.dirname(__FILE__)
+    set :root, File.absolute_path(File.dirname(__FILE__))
+    set :lib_dir, File.join(settings.root, 'lib')
   end
 end
 
-require_rel 'lib/core_extensions/**/*.rb'
-require_relative 'lib/application.rb'
+$LOAD_PATH.unshift Application.lib_dir
+require 'core_extensions/all'
+require 'application'

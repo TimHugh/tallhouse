@@ -1,4 +1,5 @@
-require_rel 'program/programs/**/*.rb'
+require 'responder'
+Dir[File.join(Application.lib_dir, 'programs', '*.rb')].each { |f| require f }
 
 class ProgramManager
   class UnknownCommand < RuntimeError; end

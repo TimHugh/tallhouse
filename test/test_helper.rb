@@ -15,7 +15,7 @@ require 'minitest/autorun'
 require 'rack/test'
 
 require_relative '../environment'
-require_rel 'test_objects/**/*.rb'
+Dir[File.join(Application.root, 'test', 'test_objects', '**', '*.rb')].each { |f| require f }
 
 class Test < Minitest::Test
 end

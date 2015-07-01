@@ -1,5 +1,6 @@
 module Programs
-  class TestProgram < Program
+  class TestProgram
+    include Responder
     @trigger = /test/
 
     def init
