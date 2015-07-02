@@ -7,7 +7,16 @@ Rake::TestTask.new(:test) do |t|
   t.pattern = 'test/**/*_test.rb'
 end
 
+task c: :console
 task :console do
+  # load environment config
+  require 'dotenv'
+  Dotenv.load
+
+  # load application
+  require_relative 'environment'
+
+  # launch IRB
   require 'irb'
   ARGV.clear
   IRB.start
