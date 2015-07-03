@@ -3,6 +3,10 @@ class Program
     attr_reader :trigger
   end
 
+  def initialize
+    init if methods.include?(:init)
+  end
+
   def action(trigger, &block)
     @actions = {} if @actions.nil?
     fail if @actions.keys.include? trigger
@@ -13,10 +17,6 @@ class Program
     @responses = {} if @responses.nil?
     @responses[key] = [] if @responses[key].nil?
     @responses[key] << message unless @responses[key].include? message
-  end
-
-  def initialize
-    init if methods.include?(:init)
   end
 
   def respond(params = {})
