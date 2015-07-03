@@ -1,13 +1,12 @@
 module Programs
-  class TestProgram
-    include Responder
+  class TestProgram < Program
     @trigger = /test/
 
     def init
-      @actions[/.*/] = ->(params) { @responses[:test].random }
-      @responses[:test] = [
-        'Test response'
-      ]
+      action /.*/ do
+        @responses[:test].random
+      end
+      add_response :test, 'Test response'
     end
   end
 end

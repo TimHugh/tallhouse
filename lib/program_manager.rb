@@ -1,4 +1,4 @@
-require 'responder'
+require 'program'
 Dir[File.join(Application.lib_dir, 'programs', '*.rb')].each { |f| require f }
 
 class ProgramManager

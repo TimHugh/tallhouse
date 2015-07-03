@@ -1,13 +1,13 @@
 module Programs
-  class WaterProgram
-    include Responder
+  class WaterProgram < Program
     @trigger = /water|garden/i
 
     def init
-      @actions[/.*/] = ->(params) { @responses[:thank_you].random }
-      @responses[:thank_you] = [
-        "Thanks for watering! 🌻🎉",
-        "Happy flowers, happy garden! 🌻😄"]
+      action /.*/ do |params|
+        @responses[:thank_you].random
+      end
+      add_response :thank_you, "Thanks for watering! 🌻🎉"
+      add_response :thank_you, "Happy flowers, happy garden! 🌻😄"
     end
   end
 end
