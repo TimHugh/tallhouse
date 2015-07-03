@@ -4,7 +4,7 @@ module Programs
 
     def init
       action /.*/ do
-        @responses[:test].random
+        response :test
       end
       add_response :test, 'Test response'
     end

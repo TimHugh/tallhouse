@@ -4,10 +4,9 @@ module Programs
 
     def init
       action(/.*/) do |_|
-        @responses[:hello].random
+        response :hello
       end
-      add_response :hello, "Hello! 🏡"
-      add_response :hello, "Yes, this is house 🏡"
+      add_response :hello, "Hello! 🏡", "Yes, this is house 🏡"
     end
   end
 end

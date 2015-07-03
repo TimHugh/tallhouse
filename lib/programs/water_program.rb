@@ -4,10 +4,9 @@ module Programs
 
     def init
       action /.*/ do |params|
-        @responses[:thank_you].random
+        response :thank_you
       end
-      add_response :thank_you, "Thanks for watering! 🌻🎉"
-      add_response :thank_you, "Happy flowers, happy garden! 🌻😄"
+      add_response :thank_you, "Thanks for watering! 🌻🎉", "Happy flowers, happy garden! 🌻😄"
     end
   end
 end
