@@ -6,6 +6,6 @@ class HelloProgramTest < Test
   end
 
   def test_default_response
-    refute program.respond(Body: 'Hello, house!').empty?
+    refute program.respond('Body' => 'Hello, house!').empty?
   end
 end

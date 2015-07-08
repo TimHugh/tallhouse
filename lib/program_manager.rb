@@ -17,7 +17,7 @@ class ProgramManager
   end
 
   def respond(params = {})
-    body = params.nil? ? "" : params[:Body]
+    body = params.nil? ? "" : params[:Body] || params['Body']
     fail MissingCommand if body.nil? || body.empty? || body.strip.empty?
 
     @programs.keys.each do |trigger|

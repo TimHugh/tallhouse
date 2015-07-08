@@ -6,6 +6,6 @@ class WaterProgramTest < Test
   end
 
   def test_default_response
-    assert_match '🌻', program.respond(Body: 'I watered today!')
+    assert_match '🌻', program.respond('Body' => 'I watered today!')
   end
 end
