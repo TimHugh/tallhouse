@@ -20,6 +20,7 @@ class Program
   end
 
   def respond(params = {})
+    body = params[:Body]
     @actions.each do |pattern, action|
       return action.call(params) if params[:Body][pattern]
     end

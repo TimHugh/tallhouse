@@ -1,13 +1,11 @@
 require 'bundler'
 Bundler.require(:default, ENV['RACK_ENV'])
 
-class Application < Sinatra::Base
-  configure do
-    set :root, File.absolute_path(File.dirname(__FILE__))
-    set :lib_dir, File.join(settings.root, 'lib')
-  end
+module Environment
+  ROOT_PATH = File.dirname(__FILE__)
+  LIB_PATH = File.join(ROOT_PATH, 'lib')
 end
+$LOAD_PATH.unshift Environment::LIB_PATH
 
-$LOAD_PATH.unshift Application.lib_dir
 require 'core_extensions/all'
 require 'application'
