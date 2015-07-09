@@ -9,7 +9,7 @@ gem 'rake'
 gem 'sinatra'
 gem 'thin'
 gem 'twilio-ruby'
-gem 'twilio_server', source: 'http://github.com/timhugh/twilio_server.git'
+gem 'twilio_server', git: 'http://github.com/timhugh/twilio_server.git'
 
 group :test, :development do
   gem 'codeclimate-test-reporter'
