@@ -3,3 +3,6 @@
 
 # ignore test coverage
 /coverage
+
+# ignore db
+/db
