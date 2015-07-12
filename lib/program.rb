@@ -13,20 +13,10 @@ class Program
     @actions[trigger] = block
   end
 
-  def add_response(key, *message)
-    @responses = {} if @responses.nil?
-    @responses[key] = [] if @responses[key].nil?
-    @responses[key] |= message
-  end
-
   def respond(params = {})
     body = params['Body']
     @actions.each do |pattern, action|
       return action.call(params) if body[pattern]
     end
-  end
-
-  def response(key)
-    @responses[key].random
   end
 end

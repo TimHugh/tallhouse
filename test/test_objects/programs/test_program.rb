@@ -4,9 +4,8 @@ module Programs
 
     def init
       action /.*/ do
-        response :test
+        'Test response'
       end
-      add_response :test, 'Test response'
     end
   end
 end

@@ -4,9 +4,11 @@ module Programs
 
     def init
       action /.*/ do |params|
-        response :thank_you
+        [
+          "Thanks for watering! 🌻🎉",
+          "Happy flowers, happy garden! 🌻😄"
+        ].random
       end
-      add_response :thank_you, "Thanks for watering! 🌻🎉", "Happy flowers, happy garden! 🌻😄"
     end
   end
 end
