@@ -1,6 +1,6 @@
 GIT
   remote: http://github.com/timhugh/twilio_server.git
-  revision: 154a330ce047854719744e05e597447e8aa5b882
+  revision: ac644a1d2cd398cc36f7fc450bce8c16a628f411
   specs:
     twilio_server (0.1.0)
       twilio-ruby (~> 4)
@@ -8,6 +8,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    bson (3.1.2)
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
@@ -15,17 +16,19 @@ GEM
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
     columnize (0.9.0)
-    daemons (1.2.2)
+    daemons (1.2.3)
     docile (1.1.5)
-    dotenv (2.0.1)
+    dotenv (2.0.2)
     eventmachine (1.0.7)
     foreman (0.78.0)
       thor (~> 0.19.1)
-    json (1.8.2)
-    jwt (1.5.0)
+    json (1.8.3)
+    jwt (1.5.1)
     method_source (0.8.2)
-    minitest (5.6.1)
-    multi_json (1.11.1)
+    minitest (5.7.0)
+    mongo (2.0.6)
+      bson (~> 3.0)
+    multi_json (1.11.2)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -68,6 +71,7 @@ DEPENDENCIES
   dotenv
   foreman
   minitest
+  mongo
   pry-byebug
   rack
   rack-test
@@ -76,3 +80,6 @@ DEPENDENCIES
   thin
   twilio-ruby
   twilio_server!
+
+BUNDLED WITH
+   1.10.5
