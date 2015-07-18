@@ -1,6 +1,6 @@
 GIT
   remote: http://github.com/timhugh/twilio_server.git
-  revision: b8d8f15a1c194bc4908edacff91b0b2822d51eac
+  revision: 4f2c0913011f90cc4f1ec4bfb8c154441b19f9f5
   specs:
     twilio_server (0.1.0)
       twilio-ruby (~> 4)

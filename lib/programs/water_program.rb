@@ -9,7 +9,17 @@ module Programs
       @db = open_database
 
       action /.*/ do |params|
+        # fetch most recent watering
+        last_watering = db.find().sort({ _id: -1 }).limit(1).first
+
+        # record watering timestamp
         log_watering(User.find_by_phone(params['From']))
+
+        # check last watering timestamp
+        
+          # if it was recently, say something
+
+          # otherwise, normal response
         [
           "Thanks for watering! 🌻🎉",
           "Happy flowers, happy garden! 🌻😄"
